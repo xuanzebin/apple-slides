@@ -4,6 +4,7 @@ let index
 let checkSlides=true
 init()
 buttonEvent()
+clockEvent()
 for(let i=0;i<$allButtons.length;i++){
     $allButtons.eq(i).on('click',function(slidesEvent){
         let $TargetButtons=$(slidesEvent.currentTarget)
@@ -11,14 +12,14 @@ for(let i=0;i<$allButtons.length;i++){
         playSlides(index,$TargetButtons)
     })
 }
-
-
-
-
-
-
-
-
+let timerClock=setInterval(()=>{
+    index=current+1
+    if(index>$('.images>img').length-3) {
+        index=0
+    }
+    let $TargetButtons=$allButtons.eq(index)
+    playSlides(index,$TargetButtons)  
+},1500)
 
 
 
@@ -88,4 +89,20 @@ function init(){
     $('.images').prepend(lastClone)
     $('.images').hide().offset()
     $('.images').css({transform:'translateX(-920px)'}).show()
+}
+function clockEvent(){
+    $('.window').on('mouseenter',function(){
+        clearInterval(timerClock)
+    })
+    $('.window').on('mouseleave',function(){
+        console.log(41)
+        timerClock=setInterval(()=>{
+            index=current+1
+            if(index>$('.images>img').length-3) {
+                index=0
+            }
+            let $TargetButtons=$allButtons.eq(index)
+            playSlides(index,$TargetButtons)  
+        },1500)
+    })
 }
