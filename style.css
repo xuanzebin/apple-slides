@@ -48,14 +48,22 @@ h1{
     border:1px solid transparent;
     border-left-color:white;
     border-right-color: #D1D1D1;
+    border-bottom-color: #D1D1D1;
     width:60px;
     height:45px;
     padding-top:10px;
+}
+.slidesBar a:hover{
+    background: #F5F5F5
+}
+.slidesBar a.active:hover{
+    background: linear-gradient(to bottom, #f9f9f9 0%,#ececec 100%);
 }
 .slidesBar a:nth-child(1){
     border:1px solid transparent;
     border-left-color: #D1D1D1;
     border-right-color: #D1D1D1;
+    border-bottom-color: #D1D1D1;
 }
 .slidesBar a.active::after{
     content:'';
