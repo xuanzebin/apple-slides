@@ -62,9 +62,18 @@ h1{
     position:absolute;
     border:8px solid transparent;
     border-top-color:white;
-    top:-5%; left:50%;
+    top:-2px; left:50%;
     margin-left:-8px;
 }
 .slidesBar a.active{
     box-shadow: inset 0px 0px 20px 6px rgba(172,172,172,1);
+}
+
+.window .nextButton{
+    position: absolute;
+    left:100%; top:50%;
+}
+.window .lastButton{
+    position: absolute;
+    right:100%; top:50%;
 }
